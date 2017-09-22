@@ -34,7 +34,14 @@ public class Search {
    * @post arr[result].funding >= minFunding && for all 0 <= i < result : arr[i].funding < minFunding
    */
   public static Optional<Integer> findTeamMinFunding(final Team[] arr, final int minFunding) {
-    // TODO complete this method
+    final int fund = arr.length;
+    for (int i = fund - 1; i >= 0; i--){
+      for (int j = 0, j<= i, j++) {
+        if (arr[j] > arr[ j+ 1]){
+          swap(arr, j, j+1);
+        }
+      }
+    }
     return Optional.empty();
   }
   
