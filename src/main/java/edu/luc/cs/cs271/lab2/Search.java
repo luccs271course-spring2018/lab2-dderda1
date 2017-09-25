@@ -43,7 +43,7 @@ public class Search {
   public static Optional<Integer> findTeamMinFunding(final Team[] arr, final int minFunding) {
     final int sizeofArr = arr.length; // similar to previous size will be compared with compare this is with an arr tho! think first find
     for (int compare = 0; compare <sizeofArr; compare++){
-        if (arr[compare].getFunding () > minFunding){//this if will get the funding and compare it to your minimum funding
+        if (arr[compare].getFunding () >= minFunding){//array of team objects calls on method getfunding compares to minfunding
           return Optional.of(compare);
         }
       }

@@ -3,7 +3,6 @@ import java.util.Optional;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-
 public class Main {
 
   public static void main(final String args[]) {
@@ -49,10 +48,8 @@ public class Main {
       System.out.println("Found!");
       final int pos = index.get();
       final Team team = array[pos];
-      // TODO DRY - eliminate this code duplication
-      System.out.println("Name: " + team.getName());
-      System.out.println("Head coach: " + team.getHeadcoach());
-      System.out.println("Funding: " + team.getFunding());
+      // TODO DRY - eliminate this code duplication try seperate method for prints
+      System.out.println("Name: " + team.getName() + " Headcoach: " + team.getHeadcoach() + " Funding: " + team.getFunding());
       System.out.println("Array index: " + pos);
       System.out.println("Ranking: " + (pos + 1));
     } else {
@@ -67,13 +64,14 @@ public class Main {
       final int pos = index.get();
       final Team team = list.get(pos);
       // TODO DRY - eliminate this code duplication
-      System.out.println("Name: " + team.getName());
-      System.out.println("Head coach: " + team.getHeadcoach());
-      System.out.println("Funding: " + team.getFunding());
+      System.out.println("Name: " + team.getName() + " Headcoach: " + team.getHeadcoach() + " Funding: " + team.getFunding());
       System.out.println("Array index: " + pos);
       System.out.println("Ranking: " + (pos + 1));
     } else {
       System.out.println("Not Found!");
     }
+  }
+  static void print(final int pos, final Team team){
+    
   }
 }
