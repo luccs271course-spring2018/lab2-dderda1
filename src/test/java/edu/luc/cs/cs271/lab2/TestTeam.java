@@ -20,8 +20,23 @@ public class TestTeam {
   }
   
   // TODO testConstructorValidHeadcoach
-  // TODO testConstructorValidFunding
-
+  @Test
+  public void testConstructorValidHeadcoach(){
+    try {
+      new Team("USA", null, 500);
+      fail("Should have thrown IllegalArgumentException");
+    } catch (final Throwable ex){
+  }
+}
+   // TODO testConstructorValidFunding
+  @Test
+  public void testConstructorValidFunding(){
+    try{
+      new Team ("USA", "Klinsmann", 0); //zero value because int
+      fail ("should have thrown IllegalArgumentException");
+    } catch (final Throwable ex){
+   }
+  }
   @Test
   public void testGetName() {
     final String name = "USA";
