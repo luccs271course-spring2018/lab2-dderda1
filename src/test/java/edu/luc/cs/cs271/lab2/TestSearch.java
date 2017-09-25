@@ -1,5 +1,5 @@
 package edu.luc.cs.cs271.lab2;
-
+import java.util.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -16,10 +16,10 @@ public class TestSearch {
 
   // similar to above function makeListFixture
   List<Team> makeListFixture (final int size){
-    List<Team> list = new ArrayList(size);
+    final List<Team> list = new ArrayList<Team>();
     for (int compare = 0; compare<size; compare++ ){ //compares arraylistsize
       final String s = Integer.toString(compare); //these are following the above steps
-      list.add(new Team("Team" + s, "Coach" + s, compare*100 +50); //add function adds new team to list
+      list.add(new Team("Team" + s, "Coach" + s, compare*100 +50)); //add function adds new team to list
     }
     return list;
   }
@@ -58,19 +58,19 @@ public class TestSearch {
   @Test
   public void testFindPositionList10f() {
     final List <Team> list = makeListFixture(10);
-    assertFalse(Search.findTeamPosition(list "Team 11").isPresent());
+    assertFalse(Search.findTeamPosition(list, "Team 11").isPresent());
   }
   
   //okay test testFindMinFundingArray for several sizes and scenarios
    @Test
   public void testFindMinFundingArray0() {
-    final Team[] arr = makeArrayFixture(10);
+    final Team[] arr = makeArrayFixture(0);
     assertFalse(Search.findTeamMinFunding(arr, 500).isPresent());
   }
   
    @Test
   public void testFindMinFundingArray10s() {
-    final Team[] arr = makeArrayFixture(0);
+    final Team[] arr = makeArrayFixture(10);
     assertTrue(Search.findTeamMinFunding(arr, 500).isPresent());
   }
   
@@ -87,12 +87,7 @@ public class TestSearch {
     assertFalse(Search.findTeamMinFundingFast(arr, 500).isPresent());
    }
   @Test
-  public void testFindMinFundingArray10s() {
-    final Team[] arr = makeArrayFixture(10);
-    assertTrue(Search.findTeamMinFundingFast(arr, 500).isPresent());
-  }
-  @Test
-  public void testFindMinFundingArray10f() {
+  public void testFindMinFundingArrayFast600f() {
     final Team[] arr = makeArrayFixture(10);
     assertTrue(Search.findTeamMinFunding(arr, 600).isPresent());
   }
