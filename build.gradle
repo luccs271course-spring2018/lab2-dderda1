@@ -17,7 +17,7 @@ mainClassName = 'edu.luc.cs.cs271.lab2.Main' // TODO change this setting to matc
 
 jar {
     manifest {
-        attributes 'Main-Class': mainClassName
+        attributes 'Main-Class': 'main/Main'
     }
 }    
 
@@ -32,3 +32,6 @@ dependencies {
 tasks.withType(JavaCompile) { 
     options.compilerArgs << "-Xlint:all" 
 }
+run {
+    standardInput = System.in
+    }

@@ -23,7 +23,14 @@ public class Search {
 
   /** Looks for the position of the named team in a list. */
   public static Optional<Integer> findTeamPosition(final List<Team> list, final String key) {
-    // TODO complete this method
+    //used in 2.4 for book 
+    int sizeofList = list.size(); //total size of list given similar to your size of arr.length
+    for (int compare = 0; compare < sizeofList; compare ++) {
+      if (list.get(compare).getName().equals(key)){
+        return Optional.of(compare);
+      }
+    }//loop will compare teams to size
+    
     return Optional.empty();
   }
   
@@ -34,14 +41,12 @@ public class Search {
    * @post arr[result].funding >= minFunding && for all 0 <= i < result : arr[i].funding < minFunding
    */
   public static Optional<Integer> findTeamMinFunding(final Team[] arr, final int minFunding) {
-    final int fund = arr.length;
-    for (int i = fund - 1; i >= 0; i--){
-      for (int j = 0, j<= i, j++) {
-        if (arr[j] > arr[ j+ 1]){
-          swap(arr, j, j+1);
+    final int sizeofArr = arr.length; // similar to previous size will be compared with compare this is with an arr tho! think first find
+    for (int compare = 0; compare <sizeofArr; compare++){
+        if (arr[compare].getFunding () > minFunding){//this if will get the funding and compare it to your minimum funding
+          return Optional.of(compare);
         }
       }
-    }
     return Optional.empty();
   }
   
