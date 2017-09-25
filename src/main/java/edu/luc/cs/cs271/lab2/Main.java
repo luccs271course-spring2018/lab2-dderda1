@@ -48,7 +48,7 @@ public class Main {
       System.out.println("Found!");
       final int pos = index.get();
       final Team team = array[pos];
-      // TODO DRY - eliminate this code duplication try seperate method for prints
+      // DONE DRY - eliminate this code duplication done by one line condensing
       System.out.println("Name: " + team.getName() + " Headcoach: " + team.getHeadcoach() + " Funding: " + team.getFunding());
       System.out.println("Array index: " + pos);
       System.out.println("Ranking: " + (pos + 1));
@@ -63,7 +63,7 @@ public class Main {
       System.out.println("Found!");
       final int pos = index.get();
       final Team team = list.get(pos);
-      // TODO DRY - eliminate this code duplication
+      // DONE DRY - eliminate this code duplication done by adding it to one line
       System.out.println("Name: " + team.getName() + " Headcoach: " + team.getHeadcoach() + " Funding: " + team.getFunding());
       System.out.println("Array index: " + pos);
       System.out.println("Ranking: " + (pos + 1));

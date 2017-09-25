@@ -66,9 +66,18 @@ public class Search {
     // Initially search the entire array
     int low = 0;
     int high = size - 1;
-    // Keep going as long as there is more than one item to be checked
-    // Eliminate the wrong half of the array
-    // Return current item only if it meets the condition!
+    int middle = ((high + low)/2);
+    do {
+      if (minFunding > arr[middle].getFunding()){
+        low = 1 + middle;
+      }
+      else if (minFunding <= arr[middle].getFunding()){
+        middle = high;
+      }
+      else if (minFunding == arr[middle].getFunding()){
+        return Optional.of(middle);
+      }
+    } while (high > low);
     if (low <= high && arr[low].getFunding() >= minFunding) {
       return Optional.of(low);
     } else {
