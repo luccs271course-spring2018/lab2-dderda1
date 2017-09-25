@@ -14,6 +14,8 @@ be in the wrong half and later on deleted, so we would never be able to find it,
 3. What is the purpose of constructor argument validity checking?
 - A: This really justs make sure that there won't be any errors regarding input or logic errors. It makes sure that the value going through the methods is 
 one that is actually useful and sensical with the parameter. 
-4 . What is the purpose of using the keyword `final` with variables and arguments?
+4. What is the purpose of using the keyword `final` with variables and arguments?
 -A: So that values cannot be changed later on, they are permanetly set.
-5 . What are alternatives to using `Optional` and how do they compare?
+5. What are alternatives to using `Optional` and how do they compare?
+-A: Optional allows you to safely use the null function, normally you would potentially have an error with null if you were to use your own objects
+and write your own methods. Something similar is isPresent which will return true and false
