@@ -19,7 +19,7 @@ public class TestTeam {
     }
   }
   
-  // TODO testConstructorValidHeadcoach
+  // did testConstructorValidHeadcoach
   @Test
   public void testConstructorValidHeadcoach(){
     try {
@@ -28,7 +28,7 @@ public class TestTeam {
     } catch (final Throwable ex){
   }
 }
-   // TODO testConstructorValidFunding
+   // did testConstructorValidFunding
   @Test
   public void testConstructorValidFunding(){
     try{
@@ -45,5 +45,17 @@ public class TestTeam {
   }
   
   // TODO testGetHeadcoach
+  @Test
+  public void testGetHeadcoach{
+    final String headcoach = "Klinsmann";
+    final team t = makeTeamFixture("USA", headcoach, 500);
+    assertEquals(headcoach, t.getHeadcoach());
+  }
   // TODO testGetFunding
+  @ Test
+  public void testGetFunding{
+    final Integer funding = 500;
+    final team t = makeTeamFixture("USA", "Klinsmann", funding);
+    assertEquals(funding, t.getFunding());
+  }
 }
