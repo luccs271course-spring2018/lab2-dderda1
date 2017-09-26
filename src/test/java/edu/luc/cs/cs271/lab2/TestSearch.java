@@ -38,8 +38,8 @@ public class TestSearch {
 
   @Test
   public void testFindPositionArray10f() {
-    final Team[] arr = makeArrayFixture(10);
-    assertFalse(Search.findTeamPosition(arr, "Team 11").isPresent());
+    final Team[] list = makeArrayFixture(10);
+    assertFalse(Search.findTeamPosition(list, "Team 11").isPresent());
   }
   
   // okay testFindPositionList0, 10s, 10f
@@ -57,8 +57,8 @@ public class TestSearch {
 
   @Test
   public void testFindPositionList10f() {
-    final List <Team> list = makeListFixture(10);
-    assertFalse(Search.findTeamPosition(list, "Team 11").isPresent());
+    final List <Team> arr = makeListFixture(10);
+    assertFalse(Search.findTeamPosition(arr, "Team 11").isPresent());
   }
   
   //okay test testFindMinFundingArray for several sizes and scenarios
@@ -82,13 +82,13 @@ public class TestSearch {
 
   // TODO: testFindMinFundingArrayFast for several sizes and scenarios
   @Test
-  public void testFindMinFundingArrayFast2f(){
-    final Team[] arr = makeArrayFixture(2);
+  public void testFindMinFundingArrayFast500(){
+    final Team[] arr = makeArrayFixture(10);
     assertFalse(Search.findTeamMinFundingFast(arr, 500).isPresent());
    }
   @Test
-  public void testFindMinFundingArrayFast6f() {
-    final Team[] arr = makeArrayFixture(6);
+  public void testFindMinFundingArrayFast600() {
+    final Team[] arr = makeArrayFixture(10);
     assertTrue(Search.findTeamMinFunding(arr, 600).isPresent());
   }
 }
